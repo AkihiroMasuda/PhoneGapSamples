@@ -1,12 +1,3 @@
-<!DOCTYPE HTML>
-<html>
-<head>
-<title>Cordova </title>
-<script type="text/javascript" charset="utf-8"src="cordova-2.0.0.js"></script>
-<script src="http://192.168.1.253:8080/target/target-script-min.js#hogehoge"></script>
-</head>
-<script type="text/javascript">
-
 	//Wait for device API libraries to load
 	//
 	document.addEventListener("deviceready", onDeviceReady, false);
@@ -37,27 +28,9 @@
     //
 	function onLoad(){
 //		alert("onLoad");
-//		alert("onLoad end");
-	}
-
-	function f1(){
-//        alert("hhh");
-		location.href = "index2.html";
 	}
 
 	function getAccel(){
         navigator.accelerometer.getCurrentAcceleration(onSuccess, onError);
-		alert("getAccel()");
 	}
 	
-	function onError() {
-		alert('onError!');
-	}	
-</script>
-<body onLoad="onLoad()">
-<h1>Hello World 1</h1>
-<img src="comic_shinku001.JPG">
-<button onClick="f1()">hogehoge</button>
-<button onClick="getAccel()">getAccel</button>
-</body>
-</html>
