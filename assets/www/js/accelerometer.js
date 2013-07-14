@@ -6,7 +6,7 @@
     //
     function onDeviceReady() {
         // Update acceleration every 3 seconds
-        var options = { frequency: 1000 };
+        var options = { frequency: 200 };
         watchID = navigator.accelerometer.watchAcceleration(onSuccess, onError, options);        
     }
 
