@@ -38,6 +38,7 @@
     }
     
     function onLoad(){
+        setInterval("getCompass()",1000);
     }
     
 </script>
@@ -49,7 +50,9 @@
             <h1>Compass</h1>
         </div>
         <div data-role="content">
+<!--
             <p data-role="button" onclick="getCompass()">getCompass</p>
+-->
             <h3 id="val">Heading : null</h3>
         </div>
         <div data-role="footer">
