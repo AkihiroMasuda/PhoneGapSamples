@@ -31,6 +31,7 @@
     </author>
 
     <access origin="*"/>
+	<access origin="192.168.1.253" />
 
     <!-- <content src="http://mysite.com/myapp.html" /> for external pages -->
     <content src="index.html" />
@@ -103,5 +104,6 @@
     </feature>
     <!-- Deprecated plugins element. Remove in 3.0 -->
     <plugins>
+	<plugin name="Accelerometer" value="org.apache.cordova.AccelListener" />
     </plugins>
 </widget>
