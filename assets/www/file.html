@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>jQuery Mobile Basic</title>
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.1.0/jquery.mobile-1.1.0.min.css" />
+<script type="text/javascript" charset="utf-8"src="js/jquery-2.0.3.min.js" > </script>
+<script type="text/javascript" charset="utf-8"src="js/jquery.mobile-1.3.1.min.js" ></script>
+<script type="text/javascript" src="js/cordova.js"></script>
+</head>
+<script type="text/javascript">
+    // Wait for device API libraries to load
+    //
+    document.addEventListener("deviceready", onDeviceReady, false);
+
+    // device APIs are available
+    //
+    function onDeviceReady() {
+        window.requestFileSystem(LocalFileSystem.PERSISTENT, 0, onFileSystemSuccess, fail);
+    }
+
+    function onFileSystemSuccess(fileSystem) {
+        console.log(fileSystem.name);
+        console.log(fileSystem.root.name);
+//        alert(fileSystem.name);
+//        alert(fileSystem.root.name);
+        // Get a list of all the entries in the directory
+        var dirReader = fileSystem.root.createReader();
+        dirReader.readEntries(success,fail);
+        $('#fullpath').text(fileSystem.root.fullPath);
+    }
+    
+    function success(entries) {
+        var i;
+        var str = "";
+        for (i=0; i<entries.length; i++) {
+            console.log(entries[i].name);
+            var strEle = "<li><a href='' data-ajax='false'>"+ entries[i].name +"</a></li>";
+            $(strEle).appendTo($('#list'));
+        }
+        $('#list').listview('refresh');
+    }
+    
+    function fail(evt) {
+        console.log(evt.target.error.code);
+        alert(evt.target.error.code);
+    }
+</script>
+<body>
+<div data-role="page" id="home">
+    <div data-role="header">
+        <h1>File</h1>
+        <a href="" data-rel="back">Back</a> <!-- 戻るボタン hrefの内容は無視される -->
+    </div>
+    <div data-role="content">
+        <h4 id="fullpath"></h4>
+        <ul data-role="listview" id="list">
+<!--            <li><a href="jqmBasic.html" data-ajax="false">jQuery Mobile Basic</a></li>-->
+        </ul>
+    </div>
+    <div data-role="footer">
+        <h4>Footer</h4>
+    </div>
+</div>
+</body>
+</html>
