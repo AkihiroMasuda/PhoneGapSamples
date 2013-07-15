@@ -105,5 +105,6 @@
     <!-- Deprecated plugins element. Remove in 3.0 -->
     <plugins>
 	<plugin name="Accelerometer" value="org.apache.cordova.AccelListener" />
-    </plugins>
+	<plugin name="Device" value="org.apache.cordova.Device" />
+	</plugins>
 </widget>
