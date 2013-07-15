@@ -22,8 +22,27 @@
                     'Device Platform: ' + device.platform + '<br />' +
                     'Device UUID: '     + device.uuid     + '<br />' +
                     'Device Model: '     + device.model     + '<br />' + //device.model は実機だと出てくるがRippleだと出ない
-                    'Device Version: '  + device.version  + '<br />';
+                    'Device Version: '  + device.version  + '<br />' +
+                    '<br/>' + 
+                    'Connection : '  + getConnection()  + '<br />';
+            ;
         $('#val').html(str);
+    }
+    
+    function getConnection() {
+            var networkState = navigator.connection.type;
+
+            var states = {};
+            states[Connection.UNKNOWN]  = 'Unknown';
+            states[Connection.ETHERNET] = 'Ethernet';
+            states[Connection.WIFI]     = 'WiFi';
+            states[Connection.CELL_2G]  = 'Cell 2G';
+            states[Connection.CELL_3G]  = 'Cell 3G';
+            states[Connection.CELL_4G]  = 'Cell 4G';
+            states[Connection.CELL]     = 'Cell generic';
+            states[Connection.NONE]     = 'No network';
+
+        return states[networkState];
     }
     
     function printProperties(obj) {
@@ -40,7 +59,7 @@
 <body>
     <div data-role="page" id="home">
         <div data-role="header">
-            <h1>Device</h1>
+            <h1>Device / Connection</h1>
             <a href="" data-rel="back">Back</a> <!-- 戻るボタン hrefの内容は無視される -->
         </div>
         <div data-role="content">
