@@ -11,6 +11,8 @@ public class MainActivity extends DroidGap {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		super.loadUrl("file:///android_asset/www/top.html");
+//		super.loadUrl("file:///android_asset/www/pgMedia.html");
+//		super.loadUrl("file:///android_asset/www/pgFilePicker.html");
 //		super.loadUrl("file:///android_asset/www/file.html");
 //		super.loadUrl("file:///android_asset/www/accelerometer.html");
 //		super.loadUrl("file:///android_asset/www/compass.html");
