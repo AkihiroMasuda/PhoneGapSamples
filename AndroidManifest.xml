@@ -41,7 +41,7 @@
             android:name="com.example.adtest56_phonegap.MainActivity"
             android:label="@string/app_name" 
             android:configChanges="orientation|screenSize"
-            android:screenOrientation="sensor"
+            android:screenOrientation="portrait"
             >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
