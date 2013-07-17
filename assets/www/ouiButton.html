@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Cordova </title>
+<!--
+<script src="http://192.168.1.253:8080/target/target-script-min.js#hogehoge"></script>
+-->
+<script type="text/javascript" charset="utf-8"src="js/jquery-2.0.3.min.js"></script>
+</head>
+<script type="text/javascript">
+    var isTouch = false;
+    function onLoad(){
+        $('.a').bind('touchstart', function() {
+            isTouch = true;
+        }
+        );
+        $('.a').bind('touchend', function() {
+            if (isTouch){
+                alert("hoge");
+                isTouch = false;
+            }
+        }
+        );
+        $('.b').bind('click', function() {
+                alert("BBBBB");
+            }
+        );
+    }
+    
+</script>
+<body onload="onLoad()">
+    
+<!--トップメニュー-->
+<div data-role="page" id="home">
+    <div data-role="header">
+        <h1>Home</h1>
+    </div>
+    <div data-role="content">
+        <div  id="hoge">
+            <input type="button" class="a" value="Use TouchStart/End Event (Fast)" />
+            <input type="button" class="b" value="Use Click (Normal)" />
+        </div>
+    </div>
+    <div data-role="footer">
+        <h4>Copyright 2013</h4>
+    </div>
+</div>
+    
+</body>
+</html>
